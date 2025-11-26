@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Hidanshu Ko Kaun Marega?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00f2ff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HKKM">
+<link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    
+</head>
+<body>
+    <div id="main-menu">
+        <h1>Hidanshu Ko Kaun Marega?</h1>
+        <p>Enter your name to begin your speedrun!</p>
+        <input type="text" id="player-name-input" placeholder="Enter your name">
+        <button id="start-game-btn">Start Game</button>
+    </div>
+
+    <div id="game-container" class="hidden">
+        <div id="ui">
+            <div id="player-stats">
+                <div class="health-bar-container">
+                    <span id="player-name-display">Player</span>
+                    <div class="health-bar-outer">
+                        <div id="player-health-bar" class="health-bar-inner"></div>
+                    </div>
+                </div>
+                <div id="stamina-container">
+                    <div class="health-bar-outer" style="width: 200px; height: 15px;">
+                        <div id="stamina-bar" class="health-bar-inner"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="timer">Time: 0.00</div>
+            <div id="boss-stats">
+                 <div class="health-bar-container">
+                    <span id="boss-name-display">YASII MIYA</span>
+                    <div class="health-bar-outer">
+                        <div id="boss-health-bar" class="health-bar-inner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <canvas id="game-canvas" width="1024" height="576"></canvas>
+
+        <div id="mobile-controls">
+            <div id="joystick" class="control-cluster">
+                 <button id="left-btn">◀</button>
+                 <button id="right-btn">▶</button>
+            </div>
+            <div id="action-buttons" class="control-cluster">
+                 <button id="jump-btn">↑</button>
+                 <button id="punch-btn">P</button>
+                 <button id="kick-btn">K</button>
+                 <button id="special-btn">S</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="victory-screen" class="modal-container hidden">
+        <div class="modal-content">
+            <h1>Victory!</h1>
+            <p>Your time: <span id="final-time">0.00</span></p>
+            <h2>Leaderboard</h2>
+            <ul id="leaderboard-list"></ul>
+            <button onclick="location.reload()">Play Again</button>
+        </div>
+    </div>
+
+    <div id="game-over-modal" class="modal-container hidden">
+        <div class="modal-content">
+            <h1>Game Over</h1>
+            <p>Your journey ends here.</p>
+            <button onclick="location.reload()">Try Again</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
